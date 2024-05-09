@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # Name of the service to be created in the K8 cluster
+  name: service 
+spec:
+  selector:
+    app: react-app 
+  type: LoadBalancer # Type of the Kubernetes Service
+  ports:
+  - protocol: TCP
+    port: 3000 # Service port
+    targetPort: 3000 # The port for the app container
+
+    

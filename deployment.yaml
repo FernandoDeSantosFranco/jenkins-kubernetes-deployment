@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment 
+  labels:
+    app: react-app
+spec:
+  replicas: 2 # The number of pods to be created in the 
+              # Kubernetes cluster for the application container
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app 
+    spec:
+      containers:
+      - name: react-app # The name of the app
+        image: bravinwasike/react-app:latest 
+        #The Docker image for building the React.js application container
+        ports:
+        - containerPort: 3000 # Port 3000 for the app
+
+        
